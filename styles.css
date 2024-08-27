@@ -1,102 +1,104 @@
 /* styles.css */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-  text-align: center;
-  margin: 20px 0;
+    text-align: center;
+    margin: 20px 0;
 }
 
 #question-list {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, 50px);
-  grid-template-rows: repeat(5, 50px);
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(5, 50px);
+    
 }
 
 .grid-container input {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-size: 24px;
-  text-transform: uppercase; /* Automatically converts input to uppercase */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase; /* Automatically converts input to uppercase */
 
-  border: 1px solid #ccc;
-  outline: none;
-  box-sizing: border-box;
-  background: transparent; /* Ensure input background is transparent */
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+    background: transparent; /* Ensure input background is transparent */
+
 }
 
+
 .grid-item .number {
-  position: absolute;
-  top: 1px; /* Distance from the top edge */
-  left: 2px; /* Distance from the left edge */
-  font-size: 15px; /* Small font size for the number */
-  color: #333; /* Text color */
-  width: 100%;
+    position: absolute;
+    top: 1px; /* Distance from the top edge */
+    left: 2px; /* Distance from the left edge */
+    font-size: 15px; /* Small font size for the number */
+    color: #333; /* Text color */
+    width: 100%;
+
 }
 
 .grid-item {
-  position: relative;
-  width: 50px; /* Match the grid column width */
-  height: 50px; /* Match the grid row height */
+    position: relative;
+    width: 50px; /* Match the grid column width */
+    height: 50px; /* Match the grid row height */
 }
 
 .grid-item.selected {
-  background-color: rgb(
-    101,
-    170,
-    230
-  ); /* Color to highlight the selected cell */
+    background-color: rgb(101, 170, 230); /* Color to highlight the selected cell */
 }
 
-.grid-item.highlight-row {
-  background-color: rgba(178, 235, 254, 0.895); /* Light blue for the row */
+
+.highlight{
+    background-color: rgba(178, 235, 254, 0.895); /* Light blue for the row */
 }
 
 #question-list h2 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 #question-list ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 #question-list ul li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #question-list > ul {
-  margin-left: 50px; /* Adjust this to change the space between the grid and the list */
+    margin-left: 50px; /* Adjust this to change the space between the grid and the list */
 }
 
+
 .button-container {
-  display: flex;
-  gap: 10px; /* Space between buttons */
-  justify-content: flex-start; /* Align buttons to the left */
-  align-items: center; /* Align buttons vertically in the middle */
-  margin-top: 20px; /* Optional: Space above the button row */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    justify-content: flex-start; /* Align buttons to the left */
+    align-items: center; /* Align buttons vertically in the middle */
+    margin-top: 20px; /* Optional: Space above the button row */
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
 }
