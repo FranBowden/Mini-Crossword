@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crossword</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Crossword</h1>
+
+    <div id="question-list">
+      <div class="grid-container">
+        <div class="grid-item">
+          <span class="number">1</span
+          ><input type="text" maxlength="1" data-answer="C" />
+        </div>
+        <div class="grid-item">
+          <span class="number">2</span
+          ><input type="text" maxlength="1" data-answer="U" />
+        </div>
+        <div class="grid-item">
+          <span class="number">3</span
+          ><input type="text" maxlength="1" data-answer="S" />
+        </div>
+        <div class="grid-item">
+          <span class="number">4</span
+          ><input type="text" maxlength="1" data-answer="P" />
+        </div>
+        <div class="grid-item top-right"></div>
+        <div class="grid-item">
+          <span class="number">5</span
+          ><input type="text" maxlength="1" data-answer="A" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="N" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="N" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="U" />
+        </div>
+        <div class="grid-item">
+          <span class="number">6</span
+          ><input type="text" maxlength="1" data-answer="L" />
+        </div>
+        <div class="grid-item">
+          <span class="number">7</span
+          ><input type="text" maxlength="1" data-answer="R" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="H" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="O" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="D" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+        <div class="grid-item">
+          <span class="number">8</span
+          ><input type="text" maxlength="1" data-answer="V" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="I" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="R" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="G" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="O" />
+        </div>
+        <div class="grid-item">
+          <span class="number">9</span
+          ><input type="text" maxlength="1" data-answer="E" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="P" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+        <div class="grid-item">
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+
+        <div class="grid-item bottom-right"></div>
+      </div>
+
+      <ul id="across">
+        <h2>Across</h2>
+        <li>1. Point of transition between two zodiac sign</li>
+        <li>5. Declare legally void</li>
+        <li>7. Providence, ___ Island</li>
+        <li>8. August zodiac sign</li>
+        <li>9. Olympic fencing sword</li>
+      </ul>
+
+      <ul id="down">
+        <h2>Down</h2>
+        <li>1. Slice up, as a turkey</li>
+        <li>2. Not "with it"</li>
+        <li>3. Be a noisy bedmate</li>
+        <li>4. Cutely pokeable bit of belly flab</li>
+        <li>6. August zodiac sign</li>
+      </ul>
+    </div>
+
+    <!-- Timer display -->
+    <div id="timer">
+      <span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+
+    <div class="button-container">
+      <button type="button" id="reveal-btn">Reveal</button>
+      <button type="button" id="check-btn">Check</button>
+      <button type="button" id="reset-btn">Reset</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
