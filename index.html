@@ -8,113 +8,114 @@
   </head>
   <body>
     <h1>Crossword</h1>
-   
+    <h1 id="status-message"></h1>
+
     <div id="question-list">
-        <div class="grid-container">
-          <div class="grid-item" data-row="1" data-col="1">
-            <span class="number">1</span>
-            <input type="text" maxlength="1" data-answer="C" />
-          </div>
-          <div class="grid-item" data-row="1" data-col="2">
-            <span class="number">2</span>
-            <input type="text" maxlength="1" data-answer="U" />
-          </div>
-          <div class="grid-item" data-row="1" data-col="3">
-            <span class="number">3</span>
-            <input type="text" maxlength="1" data-answer="S" />
-          </div>
-          <div class="grid-item" data-row="1" data-col="4">
-            <span class="number">4</span>
-            <input type="text" maxlength="1" data-answer="P" />
-          </div>
-          <div class="grid-item top-right" data-row="1" data-col="5"></div>
-          
-          <div class="grid-item" data-row="2" data-col="1">
-            <span class="number">5</span>
-            <input type="text" maxlength="1" data-answer="A" />
-          </div>
-          <div class="grid-item" data-row="2" data-col="2">
-            <input type="text" maxlength="1" data-answer="N" />
-          </div>
-          <div class="grid-item" data-row="2" data-col="3">
-            <input type="text" maxlength="1" data-answer="N" />
-          </div>
-          <div class="grid-item" data-row="2" data-col="4">
-            <input type="text" maxlength="1" data-answer="U" />
-          </div>
-          <div class="grid-item" data-row="2" data-col="5">
-            <span class="number">6</span>
-            <input type="text" maxlength="1" data-answer="L" />
-          </div>
-          
-          <div class="grid-item" data-row="3" data-col="1">
-            <span class="number">7</span>
-            <input type="text" maxlength="1" data-answer="R" />
-          </div>
-          <div class="grid-item" data-row="3" data-col="2">
-            <input type="text" maxlength="1" data-answer="H" />
-          </div>
-          <div class="grid-item" data-row="3" data-col="3">
-            <input type="text" maxlength="1" data-answer="O" />
-          </div>
-          <div class="grid-item" data-row="3" data-col="4">
-            <input type="text" maxlength="1" data-answer="D" />
-          </div>
-          <div class="grid-item" data-row="3" data-col="5">
-            <input type="text" maxlength="1" data-answer="E" />
-          </div>
-          
-          <div class="grid-item" data-row="4" data-col="1">
-            <span class="number">8</span>
-            <input type="text" maxlength="1" data-answer="V" />
-          </div>
-          <div class="grid-item" data-row="4" data-col="2">
-            <input type="text" maxlength="1" data-answer="I" />
-          </div>
-          <div class="grid-item" data-row="4" data-col="3">
-            <input type="text" maxlength="1" data-answer="R" />
-          </div>
-          <div class="grid-item" data-row="4" data-col="4">
-            <input type="text" maxlength="1" data-answer="G" />
-          </div>
-          <div class="grid-item" data-row="4" data-col="5">
-            <input type="text" maxlength="1" data-answer="O" />
-          </div>
-          
-          <div class="grid-item" data-row="5" data-col="1">
-            <span class="number">9</span>
-            <input type="text" maxlength="1" data-answer="E" />
-          </div>
-          <div class="grid-item" data-row="5" data-col="2">
-            <input type="text" maxlength="1" data-answer="P" />
-          </div>
-          <div class="grid-item" data-row="5" data-col="3">
-            <input type="text" maxlength="1" data-answer="E" />
-          </div>
-          <div class="grid-item" data-row="5" data-col="4">
-            <input type="text" maxlength="1" data-answer="E" />
-          </div>
-          <div class="grid-item bottom-right" data-row="5" data-col="5"></div>
+      <div class="grid-container">
+        <div class="grid-item" data-row="1" data-col="1">
+          <span class="number">1</span>
+          <input type="text" maxlength="1" data-answer="C" />
         </div>
+        <div class="grid-item" data-row="1" data-col="2">
+          <span class="number">2</span>
+          <input type="text" maxlength="1" data-answer="U" />
+        </div>
+        <div class="grid-item" data-row="1" data-col="3">
+          <span class="number">3</span>
+          <input type="text" maxlength="1" data-answer="S" />
+        </div>
+        <div class="grid-item" data-row="1" data-col="4">
+          <span class="number">4</span>
+          <input type="text" maxlength="1" data-answer="P" />
+        </div>
+        <div class="grid-item top-right"></div>
+
+        <div class="grid-item" data-row="2" data-col="1">
+          <span class="number">5</span>
+          <input type="text" maxlength="1" data-answer="A" />
+        </div>
+        <div class="grid-item" data-row="2" data-col="2">
+          <input type="text" maxlength="1" data-answer="N" />
+        </div>
+        <div class="grid-item" data-row="2" data-col="3">
+          <input type="text" maxlength="1" data-answer="N" />
+        </div>
+        <div class="grid-item" data-row="2" data-col="4">
+          <input type="text" maxlength="1" data-answer="U" />
+        </div>
+        <div class="grid-item" data-row="2" data-col="5">
+          <span class="number">6</span>
+          <input type="text" maxlength="1" data-answer="L" />
+        </div>
+
+        <div class="grid-item" data-row="3" data-col="1">
+          <span class="number">7</span>
+          <input type="text" maxlength="1" data-answer="R" />
+        </div>
+        <div class="grid-item" data-row="3" data-col="2">
+          <input type="text" maxlength="1" data-answer="H" />
+        </div>
+        <div class="grid-item" data-row="3" data-col="3">
+          <input type="text" maxlength="1" data-answer="O" />
+        </div>
+        <div class="grid-item" data-row="3" data-col="4">
+          <input type="text" maxlength="1" data-answer="D" />
+        </div>
+        <div class="grid-item" data-row="3" data-col="5">
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+
+        <div class="grid-item" data-row="4" data-col="1">
+          <span class="number">8</span>
+          <input type="text" maxlength="1" data-answer="V" />
+        </div>
+        <div class="grid-item" data-row="4" data-col="2">
+          <input type="text" maxlength="1" data-answer="I" />
+        </div>
+        <div class="grid-item" data-row="4" data-col="3">
+          <input type="text" maxlength="1" data-answer="R" />
+        </div>
+        <div class="grid-item" data-row="4" data-col="4">
+          <input type="text" maxlength="1" data-answer="G" />
+        </div>
+        <div class="grid-item" data-row="4" data-col="5">
+          <input type="text" maxlength="1" data-answer="O" />
+        </div>
+
+        <div class="grid-item" data-row="5" data-col="1">
+          <span class="number">9</span>
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+        <div class="grid-item" data-row="5" data-col="2">
+          <input type="text" maxlength="1" data-answer="P" />
+        </div>
+        <div class="grid-item" data-row="5" data-col="3">
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+        <div class="grid-item" data-row="5" data-col="4">
+          <input type="text" maxlength="1" data-answer="E" />
+        </div>
+        <div class="grid-item bottom-right"></div>
+      </div>
     </div>
-    
-<div id="question-list">
+
+    <div id="question-list">
       <ul id="across">
         <h2>Across</h2>
-        <li>1. Point of transition between two zodiac sign</li>
-        <li>5. Declare legally void</li>
-        <li>7. Providence, ___ Island</li>
-        <li>8. August zodiac sign</li>
-        <li>9. Olympic fencing sword</li>
+        <li data-cell="1">1. Point of transition between two zodiac signs (4)</li>
+        <li data-cell="5">5. Declare legally void (5)</li>
+        <li data-cell="7">7. Providence, ___ Island (5)</li>
+        <li data-cell="8">8. August zodiac sign (5)</li>
+        <li data-cell="9">9. Olympic fencing sword (4)</li>
       </ul>
 
       <ul id="down">
         <h2>Down</h2>
-        <li>1. Slice up, as a turkey</li>
-        <li>2. Not "with it"</li>
-        <li>3. Be a noisy bedmate</li>
-        <li>4. Cutely pokeable bit of belly flab</li>
-        <li>6. August zodiac sign</li>
+        <li data-cell="1">1. Slice up, as a turkey (5)</li>
+        <li data-cell="2">2. Not "with it" (5)</li>
+        <li data-cell="3">3. Be a noisy bedmate (5)</li>
+        <li data-cell="4">4. Cutely pokeable bit of belly flab (5)</li>
+        <li data-cell="6">6. August zodiac sign (3)</li>
       </ul>
     </div>
 

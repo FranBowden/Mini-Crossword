@@ -36,7 +36,7 @@ h1 {
     font-size: 24px;
     text-transform: uppercase; /* Automatically converts input to uppercase */
 
-    border: 1px solid #ccc;
+    border: 0.8px solid #969696;
     outline: none;
     box-sizing: border-box;
     background: transparent; /* Ensure input background is transparent */
@@ -101,4 +101,17 @@ button {
     cursor: pointer;
     border: 1px solid #ccc;
     background-color: #f0f0f0;
+}
+
+
+#status-message {
+    font-size: 4em; /* Adjust size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: rgb(0, 0, 0); /* Change text color (optional) */
+    text-align: center; /* Center-align the text horizontally */
+    position: fixed; /* Position it relative to the viewport */
+    top: 20%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    z-index: 1000; /* Ensure it appears above other content */
 }
