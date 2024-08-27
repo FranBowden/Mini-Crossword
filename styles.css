@@ -20,6 +20,20 @@ h1 {
     width: 100%;
     max-width: 800px;
     margin-top: 20px;
+   
+}
+#question-list li {
+    padding: 1%;
+}
+#question-list li:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+    color: #333; /* Darker text color on hover */
+    cursor: pointer; /* Change cursor to pointer */
+    
+}
+
+li.crossed-out {
+    text-decoration: line-through;
 }
 
 .grid-container {

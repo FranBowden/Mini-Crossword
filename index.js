@@ -12,6 +12,55 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastClickedCell = null;
     let isRowHighlight = true; // Start with row highlighting
 
+    // Add an event listener to each list item
+document.querySelectorAll('#question-list li').forEach(item => {
+    item.addEventListener('click', function() {
+        // Remove previous highlights and selections
+        document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
+        document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+
+        // Determine the list type (Across or Down) and get the cell number
+        const listId = this.closest('ul').id; // Get the ID of the parent <ul>
+        const cellNumber = this.getAttribute('data-cell'); // Get the data-cell value
+
+        let firstInputToFocus = null;
+
+        if (listId === 'across') {
+            // Highlight the entire row
+            const rowItems = document.querySelectorAll(`.grid-item[data-row="${cellNumber}"]`);
+            rowItems.forEach(cell => {
+                cell.classList.add('highlight');
+                const input = cell.querySelector('input');
+                if (input && !firstInputToFocus) {
+                    firstInputToFocus = input;
+                }
+            });
+        } else if (listId === 'down') {
+            // Highlight the entire column
+            const colItems = document.querySelectorAll(`.grid-item[data-col="${cellNumber}"]`);
+            colItems.forEach(cell => {
+                cell.classList.add('highlight');
+                const input = cell.querySelector('input');
+                if (input && !firstInputToFocus) {
+                    firstInputToFocus = input;
+                }
+            });
+        }
+
+        // Set selected cell style
+        this.classList.add('selected');
+
+        // Focus the first input field in the highlighted area
+        if (firstInputToFocus) {
+            firstInputToFocus.focus();
+        }
+    });
+});
+
+    
+    
+    
+
     function updateDisplay() {
         const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, "0");
         const seconds = (totalSeconds % 60).toString().padStart(2, "0");
@@ -99,33 +148,73 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function setTextColorToBlack(input) {
         input.style.color = 'black';
+    }// Function to set text color to black
+function setTextColorToBlack(input) {
+    input.style.color = 'black';
+}
+
+// Function to handle backspace for highlighted cells
+function backspaceHighlightedCells() {
+    // Get all highlighted cells
+    const highlightedCells = Array.from(document.querySelectorAll('.highlight'));
+
+    if (highlightedCells.length === 0) return; // No highlighted cells
+
+    // Get the currently focused cell (if any)
+    const currentFocusedCell = highlightedCells.find(cell => cell.querySelector('input') === document.activeElement);
+
+    if (currentFocusedCell) {
+        const input = currentFocusedCell.querySelector('input');
+
+        // Remove the last character from the input's value
+        input.value = input.value.slice(0, -1);
+
+        // Move to the next highlighted cell, looping back to the first if at the end
+        const currentIndex = highlightedCells.indexOf(currentFocusedCell);
+        const nextIndex = (currentIndex + 1) % highlightedCells.length;
+        const nextCell = highlightedCells[nextIndex];
+
+        // Focus on the next highlighted cell
+        if (nextCell) {
+            nextCell.querySelector('input').focus();
+        }
     }
+}
 
-    document.querySelectorAll(".grid-item input").forEach((input) => {
-        // Event listener for when the user types
-        input.addEventListener("input", function (event) {
-            if (isHighlighted(event.target)) {
-                setTextColorToBlack(event.target);
+// Event listener for input fields
+document.querySelectorAll(".grid-item input").forEach((input) => {
+    // Handle typing
+    input.addEventListener("input", function (event) {
+        if (isHighlighted(event.target)) {
+            setTextColorToBlack(event.target);
+        }
+
+        // Automatically move focus to the next cell if a single character is input
+        if (event.target.value.length === 1) {
+            const inputs = Array.from(document.querySelectorAll(".grid-item input"));
+            const currentIndex = inputs.indexOf(event.target);
+
+            if (currentIndex < inputs.length - 1) {
+                inputs[currentIndex - 1].focus();
             }
-
-            // Automatically move focus to the next cell if a single character is input
-            if (event.target.value.length === 1) {
-                const inputs = Array.from(document.querySelectorAll(".grid-item input"));
-                const currentIndex = inputs.indexOf(event.target);
-
-                if (currentIndex < inputs.length - 1) {
-                    inputs[currentIndex + 1].focus();
-                }
-            }
-        });
-
-        // Event listener for when the input field gains focus
-        input.addEventListener("focus", function (event) {
-            if (isHighlighted(event.target)) {
-                setTextColorToBlack(event.target);
-            }
-        });
+        }
     });
+
+    // Handle focus
+    input.addEventListener("focus", function (event) {
+        if (isHighlighted(event.target)) {
+            setTextColorToBlack(event.target);
+        }
+    });
+});
+
+// Event listener for backspace key
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Backspace') {
+        backspaceHighlightedCells();
+        event.preventDefault(); // Prevent default backspace behavior
+    }
+});
 
   
 
@@ -188,14 +277,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 const userAnswer = input.value.toUpperCase();
 
                 if (userAnswer === correctAnswer) {
+           
+
                     input.style.color = 'black'; // Correct answer
+                    
                 } else {
+                    
                     input.style.color = 'red'; // Incorrect answer
                 }
             }
         });
     });
-
+    
     function checkAllCells() {
         let allCorrect = true; // Flag to track if all answers are correct
 
@@ -214,15 +307,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Log a message if all answers are correct
+
         if (allCorrect) {
             console.log("YOU WON!");
            
     
             if (allCorrect) {
                 statusMessage.textContent = "YOU WON!";
+                const audio = document.getElementById('audio');
+                audio.play();
+            
+
+            return;
             } else {
-                statusMessage.textContent = ""; // Clear the message if not all cells are correct
+                statusMessage.textContent = "";
             }
         }
     }
@@ -231,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         checkAllCells()
     }
     
-    // Call updateFunction every 1000 milliseconds (1 second)
+
     const intervalId = setInterval(updateFunction, 1000);
 
     })
