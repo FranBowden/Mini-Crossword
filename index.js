@@ -10,18 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let totalSeconds = 0;
     let timerInterval;
     let lastClickedCell = null;
-    let isRowHighlight = true; // Start with row highlighting
+    let isRowHighlight = true; 
 
-    // Add an event listener to each list item
 document.querySelectorAll('#question-list li').forEach(item => {
     item.addEventListener('click', function() {
-        // Remove previous highlights and selections
         document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
         document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
 
-        // Determine the list type (Across or Down) and get the cell number
-        const listId = this.closest('ul').id; // Get the ID of the parent <ul>
-        const cellNumber = this.getAttribute('data-cell'); // Get the data-cell value
+        const listId = this.closest('ul').id; 
+        const cellNumber = this.getAttribute('data-cell');
 
         let firstInputToFocus = null;
 
@@ -36,7 +33,7 @@ document.querySelectorAll('#question-list li').forEach(item => {
                 }
             });
         } else if (listId === 'down') {
-            // Highlight the entire column
+         
             const colItems = document.querySelectorAll(`.grid-item[data-col="${cellNumber}"]`);
             colItems.forEach(cell => {
                 cell.classList.add('highlight');
@@ -47,10 +44,10 @@ document.querySelectorAll('#question-list li').forEach(item => {
             });
         }
 
-        // Set selected cell style
+     
         this.classList.add('selected');
 
-        // Focus the first input field in the highlighted area
+      
         if (firstInputToFocus) {
             firstInputToFocus.focus();
         }
@@ -98,7 +95,7 @@ document.querySelectorAll('#question-list li').forEach(item => {
 
 
     function revealAnswers() {
-        //const inputs = document.querySelectorAll(".grid-container input");
+       
         inputs.forEach((input) => {
             const answer = input.getAttribute("data-answer");
             if (answer) {
@@ -114,7 +111,7 @@ document.querySelectorAll('#question-list li').forEach(item => {
     }
 
     function handleCellClick() {
-        // Remove previous highlights and selections
+       
         document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
         document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
 
